@@ -71,6 +71,23 @@
                     "-std=c++11"
                 ]
             }],
+            ["OS=='openbsd'", {
+                "sources": [
+                    "src/linux/InotifyEventLoop.cpp",
+                    "src/linux/InotifyTree.cpp",
+                    "src/linux/InotifyService.cpp",
+                    "includes/linux/InotifyEventLoop.h",
+                    "includes/linux/InotifyTree.h",
+                    "includes/linux/InotifyService.h"
+                ],
+                "cflags": [
+                    "-Wno-unknown-pragmas",
+                    "-std=c++11"
+                ],
+                "include_dirs": [
+                    "/usr/local/include/inotify/"
+                ]
+            }],
             ["OS=='win'", {
                 "conditions": [
                     ["target_arch=='x64'", {
